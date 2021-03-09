@@ -13,8 +13,8 @@ Using a combination of abstract classes and lambda expressions, students will cr
 
 * [✔️] Please fork and clone this repository. This repository does not have a starter project, so create one inside of the cloned repository folder. Regularly commit and push your code as appropriate.
 * [✔️ ] Create an abstract class for animals
-  * [ ] All animals consume food the same way
-  * [ ] Each animal is assigned a unique number, a name, and year discovered regardless of classification.
+  * [✔️ ] All animals consume food the same way
+  * [ ✔️] Each animal is assigned a unique number, a name, and year discovered regardless of classification.
 
 - [ ] Methods will return a string saying how that animal implements the action
   - [ ] All animals can move, breath, reproduce. How they do that, so what string should get returned when the method is executed, varies by animal type.
