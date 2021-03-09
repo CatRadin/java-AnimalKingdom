@@ -1,9 +1,9 @@
 package kingdom;
 
-public class Mammals extends Animal {
+public class Fish extends Animal {
 
    // constructor -------------------------------
-    public Mammals(String name, int yearDiscovered)
+    public Fish(String name, int yearDiscovered)
     {
         super(name, yearDiscovered);
     }
@@ -13,19 +13,19 @@ public class Mammals extends Animal {
     @Override
     public String move()
     {
-        return "walks";
+        return "swims";
     }
 
     @Override
     public String breath()
     {
-        return "breathes with lungs";
+        return "breathes with gills";
     }
 
     @Override
     public String reproduce()
     {
-        return "gives birth to live young";
+        return "lays eggs";
     }
 
 }

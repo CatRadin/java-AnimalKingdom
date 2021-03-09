@@ -16,8 +16,8 @@ Using a combination of abstract classes and lambda expressions, students will cr
   * [✔️ ] All animals consume food the same way
   * [ ✔️] Each animal is assigned a unique number, a name, and year discovered regardless of classification.
 
-- [ ] Methods will return a string saying how that animal implements the action
-  - [ ] All animals can move, breath, reproduce. How they do that, so what string should get returned when the method is executed, varies by animal type.
+- [ ✔️] Methods will return a string saying how that animal implements the action
+  - [ ✔️] All animals can move, breath, reproduce. How they do that, so what string should get returned when the method is executed, varies by animal type.
 
 * [ ] Create classes for mammals, birds, fish
   * [ ] Mammals move - walk, breath - lungs, reproduce - live births
