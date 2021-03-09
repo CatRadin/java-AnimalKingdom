@@ -28,4 +28,10 @@ public class Mammals extends Animal {
         return "gives birth to live young";
     }
 
+    // @Override
+    // public String toString()
+    // {
+    // 	return "id= " + id + ", name= '" + name + "', yearNamed= " + yearDiscovered;
+    // }
+
 }

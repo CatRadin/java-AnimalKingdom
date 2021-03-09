@@ -27,5 +27,11 @@ public class Fish extends Animal {
     {
         return "lays eggs";
     }
+    // @Override
+    // public String toString()
+    // {
+    // 	return "id= " + id + ", name= '" + name + "', yearNamed= " + yearDiscovered;
+    // }
+   
 
 }

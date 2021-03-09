@@ -4,7 +4,7 @@ public abstract class Animal {
     
     //fields -------------------------------------------
     protected static int maxNum = 0;
-    protected int number;
+    protected int id;
     protected String name;
     protected int yearDiscovered;
 
@@ -13,7 +13,7 @@ public abstract class Animal {
     {
         maxNum++;
 
-        this.number = maxNum;
+        this.id = maxNum;
         this.name = name;
         this.yearDiscovered = yearDiscovered;
 
@@ -22,14 +22,20 @@ public abstract class Animal {
     //default methods ---------------------------------
     public String eat()
     {
-        return(name + "eats")
+        return(name + "eats");
+    }
+
+    @Override
+    public String toString()
+    {
+    	return "id= " + id + ", name= '" + name + "', yearNamed= " + yearDiscovered;
     }
 
     //getters & setters -------------------------------
 
-    public int getNumber()
+    public int getId()
     {
-        return number;
+        return id;
     }
 
     public String getName()
