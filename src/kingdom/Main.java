@@ -3,13 +3,14 @@ import java.util.*;
 
 public class Main 
 {
+    //filteredList method!!! Takes a list and lambda expression as params --------------------------------------------------
     private static List<Animal> filterAnimals(List<Animal> theList, CheckAnimal tester)
     {
         List<Animal> tempList = new ArrayList<>();
 
-        for(Animal a : theList) //for each animal (animal) thats in the list sent in the param
+        for(Animal a : theList) //for each animal (animal) thats in theList(param)
         {
-            if(tester.test(a)) // if tester(param) .test from CheckAnimal from the passed in lambda
+            if(tester.test(a)) // if tester(param).test from CheckAnimal(interface) from the passed in lambda
             {
                 tempList.add(a); //if true it adds it to the tempList.
             }
@@ -114,6 +115,14 @@ List<Animal> filteredListYear = new ArrayList<>();
 filteredListYear = filterAnimals(animalsList, (a) -> a.getYearDiscovered() == 1758);
 filteredListYear.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
 filteredListYear.forEach(a -> System.out.println(a.getName() ));
+System.out.println();
+
+System.out.println("\n*** Mammals listed alphabetically ***");
+System.out.println();
+List<Animal> filteredMammals = new ArrayList<>();
+filteredMammals = filterAnimals(animalsList, a -> a instanceof Mammals);
+filteredMammals.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+filteredMammals.forEach(a -> System.out.println(a.getName()));
 System.out.println();
 
     }
