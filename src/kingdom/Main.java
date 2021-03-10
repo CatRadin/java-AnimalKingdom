@@ -3,7 +3,21 @@ import java.util.*;
 
 public class Main 
 {
-    public static List<Animal> filteredAnimals = new ArrayList<Animal>();
+    private static List<Animal> filterAnimals(List<Animal> theList, CheckAnimal tester)
+    {
+        List<Animal> tempList = new ArrayList<>();
+
+        for(Animal a : theList) //for each animal (animal) thats in the list sent in the param
+        {
+            if(tester.test(a)) // if tester(param) .test from CheckAnimal from the passed in lambda
+            {
+                tempList.add(a); //if true it adds it to the tempList.
+            }
+        }
+
+        return tempList; //returns the tempList
+    }
+
     
     public static void main(String[] args)
     {
@@ -52,11 +66,55 @@ public class Main
 System.out.println();
 System.out.println("*** Array List ***");    
 // System.out.println(animalsList.get(0).toString());
-
 animalsList.forEach((a) -> System.out.println(a));
+System.out.println();
 
-animalsList.sort((animal1, animal2) -> animal1.getYearDiscovered() > animal2.getYearDiscovered());
-animalsList.forEach((animal) -> System.out.println(animal));
+System.out.println("\n*** Sorted By year decending ***"); 
+System.out.println();
+animalsList.sort((animal1, animal2) -> animal1.getYearDiscovered() - animal2.getYearDiscovered());
+animalsList.forEach(animal -> System.out.println(animal.toString()));
+System.out.println();
+
+System.out.println("\n*** Animal sorted Alphabetically ***");
+System.out.println();
+animalsList.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+animalsList.forEach(a -> System.out.println(a.toString()));
+System.out.println();
+
+System.out.println("*** Animals sorted by the way they move ***");
+System.out.println();
+animalsList.sort((a1, a2) -> a1.move().compareToIgnoreCase(a2.move()));
+animalsList.forEach(a -> System.out.println(a.getName() + " " + a.move()));
+System.out.println();
+
+System.out.println("\n*** Aanimals that breathes with lungs ***");
+System.out.println();
+List<Animal> filteredList = new ArrayList<>();
+filteredList = filterAnimals(animalsList, (a) -> a.breath() == "breathes with lungs");
+filteredList.forEach(a -> System.out.println(a.getName() + " " + a.breath()));
+System.out.println();
+
+System.out.println("\n*** Animals that breathes with lungs & were named in 1758 ***");
+System.out.println();
+List<Animal> filteredListLungsYear = new ArrayList<>();
+filteredListLungsYear = filterAnimals(animalsList, (a) -> a.breath() == "breathes with lungs" && a.getYearDiscovered() == 1758);
+filteredListLungsYear.forEach(a -> System.out.println(a.getName() + " " + a.breath() + " and it was named in " + a.getYearDiscovered()));
+System.out.println();
+
+System.out.println("\n*** Animals that lay eggs and breathes with lungs ***");
+System.out.println();
+List<Animal> filteredListEggsLungs = new ArrayList<>();
+filteredListEggsLungs = filterAnimals(animalsList, (a) -> a.breath() == "breathes with lungs" && a.reproduce() == "lays eggs");
+filteredListEggsLungs.forEach(a -> System.out.println(a.getName() + " " + a.breath() + " and it " + a.reproduce()));
+System.out.println();
+
+System.out.println("\n*** Alphabetically animals that were named in 1758 ***");
+System.out.println();
+List<Animal> filteredListYear = new ArrayList<>();
+filteredListYear = filterAnimals(animalsList, (a) -> a.getYearDiscovered() == 1758);
+filteredListYear.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+filteredListYear.forEach(a -> System.out.println(a.getName() ));
+System.out.println();
 
     }
 }
