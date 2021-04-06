@@ -1,5 +1,7 @@
 package kingdom;
 
+
+
 public abstract class Animal {
     
     //fields -------------------------------------------
